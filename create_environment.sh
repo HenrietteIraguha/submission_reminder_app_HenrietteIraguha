@@ -16,7 +16,7 @@ touch "$main_dir/assets/submissions.txt"
 touch "$main_dir/config/config.env"
 touch "$main_dir/startup.sh"
 
-# ----------------- reminder.sh -----------------
+#reminder.sh 
 cat > "$main_dir/app/reminder.sh" <<'REMINDER'
 #!/bin/bash
 
@@ -35,7 +35,7 @@ echo "--------------------------------------------"
 check_submissions "$submissions_file"
 REMINDER
 
-# ----------------- functions.sh -----------------
+#functions.sh 
 cat > "$main_dir/modules/functions.sh" <<'FUNCTION'
 #!/bin/bash
 
@@ -59,7 +59,7 @@ function check_submissions {
 }
 FUNCTION
 
-# ----------------- submissions.txt -----------------
+#submissions.txt
 cat > "$main_dir/assets/submissions.txt" <<'SUBMISSION'
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
@@ -81,18 +81,18 @@ Phoebe, Git, not submitted
 Rachel, Shell Navigation, not submitted
 SUBMISSION
 
-# ----------------- config.env -----------------
+#config.env 
 cat > "$main_dir/config/config.env" <<'CONFIG'
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 CONFIG
 
-# ----------------- startup.sh -----------------
+# startup.sh 
 cat > "$main_dir/startup.sh" <<'STARTUP'
 #!/bin/bash
 
-# Get absolute path of this script
+#absolute path of this script
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Path to reminder.sh
@@ -108,12 +108,12 @@ fi
 bash "$reminder_script"
 STARTUP
 
-# ----------------- Permissions -----------------
+#Permissions 
 chmod +x "$main_dir/app/"*.sh
 chmod +x "$main_dir/modules/"*.sh
 chmod +x "$main_dir/startup.sh"
 
-# ----------------- Completion Message -----------------
+# Completion Message 
 echo
 echo "Environment for submission reminder app created successfully ✅"
 echo "To start the app, run the following commands:"
